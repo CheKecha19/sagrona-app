@@ -1,7 +1,6 @@
 # Sagrona
 
-## Sagrona is a mobile application for monitoring physical activity, healthy eating, proper sleep and other aspects of health. With Game-Fi and Social-Financial elements.
-
+Sagrona is a mobile application for monitoring physical activity, healthy eating, proper sleep and other aspects of health. With Game-Fi and Social-Financial elements.
 
 ### Activity monitoring
 
