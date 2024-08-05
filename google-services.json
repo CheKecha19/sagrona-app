@@ -1,0 +1,40 @@
+{
+	"project_info": {
+		"project_number": "792256295847",
+		"firebase_url": "https://sagrona-bc856-default-rtdb.europe-west1.firebasedatabase.app",
+		"project_id": "sagrona-bc856",
+		"storage_bucket": "sagrona-bc856.appspot.com"
+	},
+	"client": [
+		{
+			"client_info": {
+				"mobilesdk_app_id": "1:792256295847:android:475d3fb7aaf3d6ea093c82",
+				"android_client_info": {
+					"package_name": "com.sagrona_v0.t0"
+				}
+			},
+			"oauth_client": [
+				{
+					"client_id": "792256295847-jb637na4hcuh6q40usp6ldcr9leikslk.apps.googleusercontent.com",
+					"client_type": 3
+				}
+			],
+			"api_key": [
+				{
+					"current_key": "AIzaSyBnPnIg8fneetGQGauq10LTpFB2-qa7HL0"
+				}
+			],
+			"services": {
+				"appinvite_service": {
+					"other_platform_oauth_client": [
+						{
+							"client_id": "792256295847-jb637na4hcuh6q40usp6ldcr9leikslk.apps.googleusercontent.com",
+							"client_type": 3
+						}
+					]
+				}
+			}
+		}
+	],
+	"configuration_version": "1"
+}
