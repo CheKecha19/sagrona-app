@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import { firebase } from '@react-native-firebase/auth';
+import { getUser, createUser } from '../services/FirebaseService';
 
 const ProfileScreen = () => {
     const [user, setUser] = useState(null);
@@ -10,13 +11,17 @@ const ProfileScreen = () => {
         const currentUser = firebase.auth().currentUser;
         setUser(currentUser);
         if (currentUser) {
-            setName(currentUser.displayName || '');
+            getUser(currentUser.uid).then(documentSnapshot => {
+                if (documentSnapshot.exists) {
+                    setName(documentSnapshot.data().name);
+                }
+            });
         }
     }, []);
 
     const updateProfile = async () => {
         try {
-            await user.updateProfile({ displayName: name });
+            await createUser(user.uid, { name });
             alert('Profile updated successfully');
         } catch (error) {
             alert(error.message);
@@ -25,31 +30,24 @@ const ProfileScreen = () => {
 
     return (
         <View style={styles.container}>
-            <Text>Profile</Text>
-            <TextInput
-                placeholder="Name"
-                value={name}
-                onChangeText={setName}
-                style={styles.input}
-            />
-            <Button title="Update Profile" onPress={updateProfile} />
-        </View>
-    );
+            <Text>Profile### Обновление файлов проекта для использования `config.js`
+
+                #### Создание файла `config.js`
+                Создайте файл `config.js` в корне проекта:
+
+                ```javascript
+                // config.js
+
+                export const firebaseConfig = {
+                    apiKey: "YOUR_API_KEY",
+                authDomain: "YOUR_AUTH_DOMAIN",
+                projectId: "YOUR_PROJECT_ID",
+                storageBucket: "YOUR_STORAGE_BUCKET",
+                messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+                appId: "YOUR_APP_ID",
+                measurementId: "YOUR_MEASUREMENT_ID"
 };
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        paddingHorizontal: 16,
-    },
-    input: {
-        height: 40,
-        borderColor: 'gray',
-        borderWidth: 1,
-        marginBottom: 12,
-        paddingHorizontal: 8,
-    },
-});
+                export const googleWebClientId = 'YOUR_WEB_CLIENT_ID';
 
-export default ProfileScreen;
+// Add other global variables here
