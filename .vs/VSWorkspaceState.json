@@ -4,7 +4,8 @@
     "\\android",
     "\\android\\app",
     "\\ios",
-    "\\screens"
+    "\\screens",
+    "\\services"
   ],
   "SelectedNode": "\\app.js",
   "PreviewInSolutionExplorer": false
